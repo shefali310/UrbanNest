@@ -3,7 +3,7 @@ import "../css/urbanNest.css";
 
 const Hero = () => {
   return (
-    <div className="bg-orange pb-16 pt-16" style={{ backgroundImage: 'url("src/assets/holidayInn8.jpg")', backgroundSize: 'cover', backgroundPosition: 'center', height: '400px' }}>
+    <div className="bg-orange pb-16 pt-16" style={{ backgroundImage: 'url("imgs/holidayInn8.jpg")', backgroundSize: 'cover', backgroundPosition: 'center', height: '400px' }}>
       <div className="container mx-auto flex flex-col gap-2">
         <h1 className="sm:text-4xl md:text-4xl lg:text-4xl  pl-5 text-white font-bold" style={{ textShadow: '2px 2px 8px rgba(0, 0, 0, 0.5)' }}>
           Book the moment, stay a lifetime. 

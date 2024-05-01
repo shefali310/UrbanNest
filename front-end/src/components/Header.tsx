@@ -41,7 +41,7 @@ const Header = () => {
         <span className="text-3xl pl-5 md:text-xl text-orange font-bold tracking-tight">
           <Link to="/">
             <img
-              src="src/assets/UrbanNestLogo.png"
+              src="imgs/UrbanNestLogo.png"
               alt="UrbanNest.com"
               className="w-32 h-14 rounded-md"
             />

@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="flex flex-col items-center md:items-start">
           <Link to="/">
             <img
-              src="src/assets/UrbanNestLogo.png"
+              src="imgs/UrbanNestLogo.png"
               alt="UrbanNest.com"
               className="w-32 h-14 rounded-md"
             />
