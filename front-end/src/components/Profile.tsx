@@ -4,11 +4,11 @@ import { fetchUserProfile, UserProfileResponse } from "../api-client";
 
 const Profile: React.FC<{ userId: string }> = ({ userId }) => {
   const { data, isLoading, isError } = useQuery(["profile", userId], () =>
-    fetchUserProfile(userId.userId)
+    // fetchUserProfile(userId.userId)
 
-    // {
-    //   return fetchUserProfile(userId);
-    // }
+    {
+      return fetchUserProfile(userId);
+    }
   );
 
   if (isLoading)

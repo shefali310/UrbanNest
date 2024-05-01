@@ -51,7 +51,7 @@ app.use(
   })
 );
 
-// app.use(express.static(path.join(__dirname, "../../front-end/dist")))
+app.use(express.static(path.join(__dirname, "../../../front-end/dist")))
 
 // Api handling
 
