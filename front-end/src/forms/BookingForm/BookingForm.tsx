@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { PaymentIntentResponse } from "../../../../back-end/src/models/hotel";
-import { UserType } from "../../../../back-end/src/models/user";
+import { PaymentIntentResponse } from "../../../../back-end/src/shared/types";
+import { UserType } from "../../../../back-end/src/shared/types";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { StripeCardElement } from "@stripe/stripe-js";
 import { useSearchContext } from "../../contexts/SearchContext";

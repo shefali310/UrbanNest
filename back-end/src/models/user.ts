@@ -1,17 +1,8 @@
 import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
+import { UserType } from "../shared/types";
 
-// Define the shape of the User document in MongoDB
-export type UserType = {
-  _id: string;
-  email: string;
-  password: string;
-  firstName: string;
-  lastName: string;
-  resetToken?: string;
-  resetTokenExpiration?: number;
-  role: "admin" | "user";
-};
+
 
 // Define the schema for the User model
 const userSchema = new mongoose.Schema({

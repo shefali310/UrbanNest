@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useAppContext } from "../contexts/AppContext";
 import SignOutButton from "./SignOutButton";
-import { UserType } from "../../../back-end/src/models/user";
+import { UserType } from "../../../back-end/src/shared/types";
 import { fetchCurrentUser } from "../api-client";
 import "../css/urbanNest.css";
 import { FaUser, FaBars } from "react-icons/fa";

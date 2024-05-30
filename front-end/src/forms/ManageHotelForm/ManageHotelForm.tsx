@@ -4,7 +4,7 @@ import TypeSection from "./TypeSection";
 import FacilitiesSection from "./FacilitiesSection";
 import GuestSection from "./GuestSection";
 import ImagesSection from "./ImagesSection";
-import { HotelType } from "../../../../back-end/src/models/hotel";
+import { HotelType } from "../../../../back-end/src/shared/types";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 

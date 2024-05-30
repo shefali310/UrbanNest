@@ -6,8 +6,8 @@ import {
   HotelSearchResponse,
   HotelType,
   PaymentIntentResponse,
-} from "../../back-end/src/models/hotel";
-import { UserType } from "../../back-end/src/models/user";
+} from "../../back-end/src/shared/types";
+import { UserType } from "../../back-end/src/shared/types";
 import axios from "axios";
 
 export type UserProfileResponse = {

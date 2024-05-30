@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchUsersWithHotels } from "../api-client";
-import { HotelType } from "../../../back-end/src/models/hotel";
+import { HotelType } from "../../../back-end/src/shared/types";
 
 const AdminUserBookingInfo: React.FC = () => {
   const { userId } = useParams<{ userId: string }>();

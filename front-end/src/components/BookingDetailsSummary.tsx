@@ -1,4 +1,4 @@
-import { HotelType } from "../../../back-end/src/models/hotel";
+import { HotelType } from "../../../back-end/src/shared/types";
 import { useRoomContext } from "./../contexts/RoomContext";
 type Props = {
   checkIn: Date;
