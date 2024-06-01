@@ -45,46 +45,14 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// app.use(
-//   cors({
-//     origin: "*",
-//     credentials: true,
-//   })
-// );
-
-// Define allowed origins
-const allowedOrigins = process.env.ALLOWED_ORIGINS ? process.env.ALLOWED_ORIGINS.split(",") : [];
-
-// CORS setup
 app.use(
   cors({
-    origin: (origin, callback) => {
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
+    origin: "process.env.FRONTEND_URL",
     credentials: true,
   })
 );
 
-// Set Referrer Policy header
-app.use((req, res, next) => {
-  res.setHeader("Referrer-Policy", "no-referrer");
-  next();
-});
-
-
-
-
-
 // app.use(express.static(path.join(__dirname, "../../../front-end/dist")))
-
-
-
-
-
 
 // Api handling
 
