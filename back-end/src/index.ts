@@ -44,12 +44,19 @@ const app = express();
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
 app.use(
   cors({
     origin: "https://urban-nest-jet.vercel.app/",
     credentials: true,
   })
 );
+
+// Set Referrer Policy header
+app.use((req, res, next) => {
+  res.setHeader("Referrer-Policy", "no-referrer"); // Change this to whatever policy you need
+  next();
+});
 
 
 
