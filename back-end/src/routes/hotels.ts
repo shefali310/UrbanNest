@@ -1,7 +1,7 @@
 import express, { Request, Response } from "express";
 import Hotel from "../models/hotel";
 import hotel from "../../src/models/hotel";
-import  { BookingType, HotelSearchResponse } from "../../src/shared/types";
+import { BookingType, HotelSearchResponse } from "../../src/shared/types";
 import { param, validationResult } from "express-validator";
 import Stripe from "stripe";
 import verifyToken from "../../middleware/auth";
@@ -66,11 +66,6 @@ router.get("/", async (req: Request, res: Response) => {
   try {
     const hotels = await Hotel.find().sort("-lastUpdated");
 
-     // Set CORS headers
-     res.setHeader('Access-Control-Allow-Origin', 'https://urban-nest-jet.vercel.app');
-     res.setHeader('Access-Control-Allow-Credentials', 'true');
-
-     
     res.json(hotels);
   } catch (error) {
     console.log("error", error);
@@ -279,8 +274,5 @@ router.put(
     }
   }
 );
-
-
-
 
 export default router;
