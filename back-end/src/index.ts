@@ -55,12 +55,15 @@ app.use(express.urlencoded({ extended: true }));
 
 
 // CORS configuration
-const corsOptions = {
-  origin: 'https://urban-nest-jet.vercel.app',
-  credentials: true,
-};
+// const corsOptions = {
+//   origin: 'https://urban-nest-jet.vercel.app',
+//   credentials: true,
+// };
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
+
+app.use(cors());
+app.options('*', cors());
 
 
 
