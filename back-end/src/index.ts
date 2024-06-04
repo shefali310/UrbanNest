@@ -45,23 +45,21 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use(
-  cors({
-    origin: 'https://urban-nest-jet.vercel.app/',
-    credentials: true,
-  })
-);
+// app.use(
+//   cors({
+//     origin: 'https://urban-nest-jet.vercel.app/',
+//     credentials: true,
+//   })
+// );
 
-// CORS configuration
-// const corsOptions = {
-//   origin: 'https://urban-nest-jet.vercel.app',
-//   credentials: true,
-// };
+// Enable CORS for a specific origin
+const corsOptions = {
+  origin: 'https://urban-nest-jet.vercel.app',
+};
 
-// app.use(cors(corsOptions));
+app.use(cors(corsOptions));
 
-// app.use(cors());
-// app.options('*', cors());
+
 
 // app.use(express.static(path.join(__dirname, "../../../front-end/dist")))
 
