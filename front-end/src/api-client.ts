@@ -62,7 +62,7 @@ export const signIn = async (formData: SignInFormData) => {
 export const validateToken = async () => {
   const response = await fetch(`${API_BASE_URL}/api/auth/validate-token`, {
     method: 'GET',
-    credentials: "include",
+    credentials: 'include',
     headers: {
       'Content-Type': 'application/json'
      
