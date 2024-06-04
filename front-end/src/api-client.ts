@@ -64,7 +64,8 @@ export const validateToken = async () => {
     method: 'GET',
     credentials: "include",
     headers: {
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/json'
+     
     },
   });
 

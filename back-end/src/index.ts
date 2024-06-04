@@ -47,7 +47,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(
   cors({
-    origin: "https://urban-nest-jet.vercel.app",
+    origin: process.env.FRONTEND_URL,
     credentials: true,
   })
 );
