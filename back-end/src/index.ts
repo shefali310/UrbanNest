@@ -10,7 +10,6 @@ import { v2 as cloudinary } from "cloudinary";
 import hotelRoutes from "./routes/hotels";
 import bookingRoutes from "./routes/my-bookings";
 import usersWithBookingsRoutes from "./routes/my-users";
-import path from "path";
 
 // Cloudinary setup
 cloudinary.config({
@@ -47,7 +46,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // app.use(
 //   cors({
-//     origin: 'https://urban-nest-jet.vercel.app/',
+//     origin: process.env.FRONTEND_URL,
 //     credentials: true,
 //   })
 // );
@@ -59,10 +58,6 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-
-
-
-// app.use(express.static(path.join(__dirname, "../../../front-end/dist")))
 
 // Api handling
 
