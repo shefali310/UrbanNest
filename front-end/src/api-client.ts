@@ -61,7 +61,11 @@ export const signIn = async (formData: SignInFormData) => {
 // Make a request to validate the user's token
 export const validateToken = async () => {
   const response = await fetch(`${API_BASE_URL}/api/auth/validate-token`, {
+    method: 'GET',
     credentials: "include",
+    headers: {
+      'Content-Type': 'application/json',
+    },
   });
 
   // Throw an error if the response is not okay
@@ -275,7 +279,11 @@ export const createPaymentIntent = async (
 // Make a request to fetch the current user
 export const fetchCurrentUser = async (): Promise<UserType> => {
   const response = await fetch(`${API_BASE_URL}/api/users/me`, {
+    method: 'GET',
     credentials: "include",
+    headers: {
+      'Content-Type': 'application/json'
+    }
   });
   if (!response.ok) {
     throw new Error("Error fetching user");
