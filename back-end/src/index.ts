@@ -55,6 +55,7 @@ app.use(express.urlencoded({ extended: true }));
 // Enable CORS for a specific origin
 const corsOptions = {
   origin: 'https://urban-nest-jet.vercel.app',
+  credentials: true
 };
 
 app.use(cors(corsOptions));
