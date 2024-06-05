@@ -46,8 +46,8 @@ router.post(
       );
 
       // Set the JWT token as a cookie
-      // chage 
-      res.cookie("token", token, {
+     
+      res.cookie("auth_token", token, {
         httpOnly: true,
         secure: process.env.NODE_ENV === "production",
         maxAge: 86400000, // 1 day in milliseconds

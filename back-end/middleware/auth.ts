@@ -12,7 +12,7 @@ declare global {
 
 // Middleware to verify the presence and validity of the JWT token
 const verifyToken = (req: Request, res: Response, next: NextFunction) => {
-  const token = req.cookies["token"];
+  const token = req.cookies["auth_token"];
 
   // Check if the token is missing
   if (!token) {

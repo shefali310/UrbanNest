@@ -11,8 +11,6 @@ import hotelRoutes from "./routes/hotels";
 import bookingRoutes from "./routes/my-bookings";
 import usersWithBookingsRoutes from "./routes/my-users";
 
-import { expressjwt as jwt } from 'express-jwt';
-
 // Cloudinary setup
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -46,8 +44,6 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-
-
 // app.use(
 //   cors({
 //     origin: process.env.FRONTEND_URL,
@@ -57,18 +53,11 @@ app.use(express.urlencoded({ extended: true }));
 
 // Enable CORS for a specific origin
 const corsOptions = {
-  origin: 'https://urban-nest-jet.vercel.app',
-  credentials: true
+  origin: "https://urban-nest-jet.vercel.app",
+  credentials: true,
 };
 
 app.use(cors(corsOptions));
-
-app.use(
-  jwt({
-    secret: process.env.JWT_SECRET_KEY  || 'XNEydixzSPyGn2NjgfAPS4NtUzsKSafc' , 
-    algorithms: ['HS256'],
-    getToken: (req) => req.cookies.token
-  }))
 
 // Api handling
 
@@ -78,5 +67,3 @@ app.use("/api/my-hotels", myHotelRoutes);
 app.use("/api/hotels", hotelRoutes);
 app.use("/api/my-bookings", bookingRoutes);
 app.use("/api/users-with-bookings", usersWithBookingsRoutes);
-
-
