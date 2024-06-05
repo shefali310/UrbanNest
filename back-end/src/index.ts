@@ -65,13 +65,10 @@ app.use(cors(corsOptions));
 
 app.use(
   jwt({
-    secret: process.env.JWT_SECRET_KEY  || 'XNEydixzSPyGn2NjgfAPS4NtUzsKSafc' , // Use your environment variable or a default value
+    secret: process.env.JWT_SECRET_KEY  || 'XNEydixzSPyGn2NjgfAPS4NtUzsKSafc' , 
     algorithms: ['HS256'],
-    getToken: (req) => req.cookies.auth_token
-  }).unless({
-    path: ['/api/auth/login', '/api/auth/register'] // Paths that don't require authentication
-  })
-);
+    getToken: (req) => req.cookies.token
+  }))
 
 // Api handling
 
