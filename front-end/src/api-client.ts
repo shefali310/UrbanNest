@@ -2,7 +2,6 @@ import { RegisterFormData } from "./pages/Register";
 import { SignInFormData } from "./pages/SignIn";
 import { BookingFormData } from "./forms/BookingForm/BookingForm";
 import {
- 
   HotelSearchResponse,
   HotelType,
   PaymentIntentResponse,
@@ -61,11 +60,10 @@ export const signIn = async (formData: SignInFormData) => {
 // Make a request to validate the user's token
 export const validateToken = async () => {
   const response = await fetch(`${API_BASE_URL}/api/auth/validate-token`, {
-    method: 'GET',
-    credentials: 'include',
+    method: "GET",
+    credentials: "include",
     headers: {
-      'Content-Type': 'application/json'
-     
+      "Content-Type": "application/json",
     },
   });
 
@@ -280,12 +278,13 @@ export const createPaymentIntent = async (
 // Make a request to fetch the current user
 export const fetchCurrentUser = async (): Promise<UserType> => {
   const response = await fetch(`${API_BASE_URL}/api/users/me`, {
-    method: 'GET',
+    method: "GET",
     credentials: "include",
     headers: {
-      'Content-Type': 'application/json'
-    }
+      "Content-Type": "application/json",
+    },
   });
+  console.log(response);
   if (!response.ok) {
     throw new Error("Error fetching user");
   }
