@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useAppContext } from "../contexts/AppContext";
 import SignOutButton from "./SignOutButton";
 import { UserType } from "../../../back-end/src/shared/types";
+import Cookies from "js-cookie";
 import { fetchCurrentUser } from "../api-client";
 import "../css/urbanNest.css";
 import { FaUser, FaBars } from "react-icons/fa";
@@ -23,9 +24,11 @@ const Header = () => {
       }
     };
 
-    fetchUserData();
-  }, [isLoggedIn]); // Fetch user data whenever isLoggedIn changes
-
+    const authToken = Cookies.get("auth_token");
+    if (authToken) {
+      fetchUserData();
+    }
+  }, [isLoggedIn, Cookies.get("auth_token")]); // Fetch user data whenever isLoggedIn changes
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
